@@ -1,0 +1,25 @@
+﻿@model Nuevo.Web.Models.ResidanceModels.ResidanceModel
+@{
+    ViewBag.Title = "SinglePage";
+}
+
+
+
+<div id="main-content" class="main-content clearfix" data-sidebar="right">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <p>Added User: @Model.ApplicationUser</p>
+            </div>
+            <div class="col-md-2">
+                <p>Name: @Model.Name</p>
+            </div>
+            <div class="col-md-2">
+                <p>Heating: @Model.Heating</p>
+            </div>
+            <div class="col-md-2">
+                <p>Price: @Model.Price</p>
+            </div>
+        </div>
+    </div>
+</div>

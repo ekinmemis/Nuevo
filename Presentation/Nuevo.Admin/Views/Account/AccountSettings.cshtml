@@ -1,0 +1,75 @@
+﻿@model  Nuevo.Admin.Models.AccountModels.AccountSettingsModel
+@{
+    ViewBag.Title = "AccountSettings";
+}
+
+<div class="page-content">
+    <!-- Main content -->
+    <div class="content-wrapper">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center align-items-center">
+            <!-- Registration form -->
+            @using (Html.BeginForm("AccountSettings", "Account", FormMethod.Post, new { @class = "flex-fill" }))
+            {
+                <div class="row">
+                    <div class="col-lg-8 offset-md-2">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="icon-user icon-2x text-success border-success border-3 rounded-round p-3 mb-3 mt-1"></i>
+                                    <h5 class="mb-0">Account Settings</h5>
+                                    @Html.AntiForgeryToken()
+                                </div>
+
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-ticket"></i></b> Update </button>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!-- /registration form -->
+        </div>
+        <!-- /content area -->
+    </div>
+    <!-- /main content -->
+</div>

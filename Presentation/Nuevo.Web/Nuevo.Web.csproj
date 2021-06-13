@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF5FE0F5-8229-401A-A94B-AC30C7EA158C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nuevo.Web</RootNamespace>
+    <AssemblyName>Nuevo.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=6.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.6.2.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=6.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Mvc5.6.0.0\lib\net472\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Configurations\AutofacConfiguration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\HtmlExtensions.cs" />
+    <Compile Include="Factories\Residances\IResidanceModelFactory.cs" />
+    <Compile Include="Models\IPageableModel.cs" />
+    <Compile Include="Models\ResidanceModels\ResidanceFilteringModel.cs" />
+    <Compile Include="Factories\Residances\ResidanceModelFactory.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResidanceModels\ResidanceListModel.cs" />
+    <Compile Include="Models\ResidanceModels\ResidanceModel.cs" />
+    <Compile Include="Paging\BasePageableModel.cs" />
+    <Compile Include="Paging\IPageableModel.cs" />
+    <Compile Include="Paging\Pager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\simplelife\css\defaults.css" />
+    <Content Include="Content\simplelife\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\simplelife\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\simplelife\css\fonts\icomoon.svg" />
+    <Content Include="Content\simplelife\css\fonts\Notera_PersonalUseOnly.svg" />
+    <Content Include="Content\simplelife\css\libs\animate.css" />
+    <Content Include="Content\simplelife\css\libs\bootstrap.min.css" />
+    <Content Include="Content\simplelife\css\libs\font-awesome.min.css" />
+    <Content Include="Content\simplelife\css\libs\icomoon.css" />
+    <Content Include="Content\simplelife\css\libs\justifiedGallery.min.css" />
+    <Content Include="Content\simplelife\css\libs\magnific-popup.css" />
+    <Content Include="Content\simplelife\css\libs\owl.carousel.min.css" />
+    <Content Include="Content\simplelife\css\styles.css" />
+    <Content Include="Content\simplelife\css\variables.css" />
+    <Content Include="Content\simplelife\images\avatar.jpg" />
+    <Content Include="Content\simplelife\images\avatar\1.jpg" />
+    <Content Include="Content\simplelife\images\avatar\2.jpg" />
+    <Content Include="Content\simplelife\images\avatar\3.jpg" />
+    <Content Include="Content\simplelife\images\featured-slider\1.jpg" />
+    <Content Include="Content\simplelife\images\featured-slider\2.jpg" />
+    <Content Include="Content\simplelife\images\featured-slider\3.jpg" />
+    <Content Include="Content\simplelife\images\featured-slider\4.jpg" />
+    <Content Include="Content\simplelife\images\featured-slider\5.jpg" />
+    <Content Include="Content\simplelife\images\featured-slider\bg-3.jpg" />
+    <Content Include="Content\simplelife\images\featured-slider\bg.jpg" />
+    <Content Include="Content\simplelife\images\footer\1.jpg" />
+    <Content Include="Content\simplelife\images\footer\2.jpg" />
+    <Content Include="Content\simplelife\images\footer\3.jpg" />
+    <Content Include="Content\simplelife\images\footer\4.jpg" />
+    <Content Include="Content\simplelife\images\footer\5.jpg" />
+    <Content Include="Content\simplelife\images\footer\6.jpg" />
+    <Content Include="Content\simplelife\images\footer\7.jpg" />
+    <Content Include="Content\simplelife\images\footer\8.jpg" />
+    <Content Include="Content\simplelife\images\footer\background.jpg" />
+    <Content Include="Content\simplelife\images\footer\widgets-background.jpg" />
+    <Content Include="Content\simplelife\images\logo-2.png" />
+    <Content Include="Content\simplelife\images\logo-3.png" />
+    <Content Include="Content\simplelife\images\logo-4.png" />
+    <Content Include="Content\simplelife\images\logo-background.jpg" />
+    <Content Include="Content\simplelife\images\logo.png" />
+    <Content Include="Content\simplelife\images\posts\1.jpg" />
+    <Content Include="Content\simplelife\images\posts\10.jpg" />
+    <Content Include="Content\simplelife\images\posts\11.jpg" />
+    <Content Include="Content\simplelife\images\posts\12.jpg" />
+    <Content Include="Content\simplelife\images\posts\13.jpg" />
+    <Content Include="Content\simplelife\images\posts\14.jpg" />
+    <Content Include="Content\simplelife\images\posts\15.jpg" />
+    <Content Include="Content\simplelife\images\posts\16.jpg" />
+    <Content Include="Content\simplelife\images\posts\17.jpg" />
+    <Content Include="Content\simplelife\images\posts\18.jpg" />
+    <Content Include="Content\simplelife\images\posts\19.jpg" />
+    <Content Include="Content\simplelife\images\posts\2.jpg" />
+    <Content Include="Content\simplelife\images\posts\20.jpg" />
+    <Content Include="Content\simplelife\images\posts\21.jpg" />
+    <Content Include="Content\simplelife\images\posts\22.jpg" />
+    <Content Include="Content\simplelife\images\posts\23.jpg" />
+    <Content Include="Content\simplelife\images\posts\24.jpg" />
+    <Content Include="Content\simplelife\images\posts\25.jpg" />
+    <Content Include="Content\simplelife\images\posts\26.jpg" />
+    <Content Include="Content\simplelife\images\posts\27.jpg" />
+    <Content Include="Content\simplelife\images\posts\28.jpg" />
+    <Content Include="Content\simplelife\images\posts\29.jpg" />
+    <Content Include="Content\simplelife\images\posts\3.jpg" />
+    <Content Include="Content\simplelife\images\posts\30.jpg" />
+    <Content Include="Content\simplelife\images\posts\31.jpg" />
+    <Content Include="Content\simplelife\images\posts\4.jpg" />
+    <Content Include="Content\simplelife\images\posts\5.jpg" />
+    <Content Include="Content\simplelife\images\posts\6.jpg" />
+    <Content Include="Content\simplelife\images\posts\7.jpg" />
+    <Content Include="Content\simplelife\images\posts\8.jpg" />
+    <Content Include="Content\simplelife\images\posts\9.jpg" />
+    <Content Include="Content\simplelife\images\sign.png" />
+    <Content Include="Content\simplelife\images\single\1.jpg" />
+    <Content Include="Content\simplelife\images\single\2.jpg" />
+    <Content Include="Content\simplelife\images\single\3.jpg" />
+    <Content Include="Content\simplelife\images\single\4.jpg" />
+    <Content Include="Content\simplelife\images\subcribe-bg.jpg" />
+    <Content Include="Content\simplelife\images\widgets\about-me\shutterstock_334693031.jpg" />
+    <Content Include="Content\simplelife\images\widgets\banner\advertise.jpg" />
+    <Content Include="Content\simplelife\images\widgets\category\1.jpg" />
+    <Content Include="Content\simplelife\images\widgets\category\2.jpg" />
+    <Content Include="Content\simplelife\images\widgets\category\3.jpg" />
+    <Content Include="Content\simplelife\images\widgets\featured-posts\1.jpg" />
+    <Content Include="Content\simplelife\images\widgets\instagram\1.jpg" />
+    <Content Include="Content\simplelife\images\widgets\instagram\2.jpg" />
+    <Content Include="Content\simplelife\images\widgets\instagram\3.jpg" />
+    <Content Include="Content\simplelife\images\widgets\instagram\4.jpg" />
+    <Content Include="Content\simplelife\images\widgets\instagram\5.jpg" />
+    <Content Include="Content\simplelife\images\widgets\instagram\6.jpg" />
+    <Content Include="Content\simplelife\images\widgets\instagram\7.jpg" />
+    <Content Include="Content\simplelife\images\widgets\instagram\8.jpg" />
+    <Content Include="Content\simplelife\images\widgets\instagram\9.jpg" />
+    <Content Include="Content\simplelife\images\widgets\posts\1.jpg" />
+    <Content Include="Content\simplelife\images\widgets\posts\2.jpg" />
+    <Content Include="Content\simplelife\images\widgets\posts\3.jpg" />
+    <Content Include="Content\simplelife\images\widgets\posts\4.jpg" />
+    <Content Include="Content\simplelife\js\libs\bootstrap.min.js" />
+    <Content Include="Content\simplelife\js\libs\jquery-1.12.4.min.js" />
+    <Content Include="Content\simplelife\js\libs\jquery-scrolltofixed-min.js" />
+    <Content Include="Content\simplelife\js\libs\jquery.justifiedGallery.min.js" />
+    <Content Include="Content\simplelife\js\libs\jquery.magnific-popup.js" />
+    <Content Include="Content\simplelife\js\libs\masonry.pkgd.js" />
+    <Content Include="Content\simplelife\js\libs\owl.carousel.js" />
+    <Content Include="Content\simplelife\js\scripts.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\simplelife\css\defaults.less" />
+    <Content Include="Content\simplelife\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\simplelife\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\simplelife\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\simplelife\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\simplelife\css\fonts\FontAwesome.otf" />
+    <Content Include="Content\simplelife\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\simplelife\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\simplelife\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\simplelife\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\simplelife\css\fonts\icomoon.eot" />
+    <Content Include="Content\simplelife\css\fonts\icomoon.ttf" />
+    <Content Include="Content\simplelife\css\fonts\icomoon.woff" />
+    <Content Include="Content\simplelife\css\fonts\icomoon.woff2" />
+    <Content Include="Content\simplelife\css\fonts\Notera_PersonalUseOnly.eot" />
+    <Content Include="Content\simplelife\css\fonts\Notera_PersonalUseOnly.ttf" />
+    <Content Include="Content\simplelife\css\fonts\Notera_PersonalUseOnly.woff" />
+    <Content Include="Content\simplelife\css\fonts\Notera_PersonalUseOnly.woff2" />
+    <Content Include="Content\simplelife\css\styles.less" />
+    <Content Include="Content\simplelife\css\variables.less" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\SinglePage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Nuevo.Core\Nuevo.Core.csproj">
+      <Project>{05A53670-CDA6-4421-9C61-AD3E3CE539AA}</Project>
+      <Name>Nuevo.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Nuevo.Data\Nuevo.Data.csproj">
+      <Project>{E29D2CEB-DEE5-4F65-BE97-E9C1874C3A5C}</Project>
+      <Name>Nuevo.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Nuevo.Services\Nuevo.Services.csproj">
+      <Project>{F37AF2F0-AECE-4F3B-AF23-26C614FCFE9C}</Project>
+      <Name>Nuevo.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51700</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51700/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

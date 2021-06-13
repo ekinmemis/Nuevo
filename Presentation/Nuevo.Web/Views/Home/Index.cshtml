@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@model Nuevo.Web.Models.ResidanceModels.ResidanceListModel
+@using Nuevo.Web.Extensions
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="blog-posts">
+                <div class="list-layout">
+                    @foreach (var item in Model.Residances)
+                    {
+
+                        <article class="post-list post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Title -->
+                                    <h3 class="title">
+                                        <a href="">@item.Name</a>
+                                    </h3>
+                                    <!-- End Title -->
+                                    <!-- The Excerpt -->
+                                    <div class="the-excerpt">
+                                        <p>@item.Description</p>
+                                    </div>
+                                    <!-- End The Excerpt -->
+                                    <!-- Read More -->
+                                    <div class="read-more">
+                                        <a href="@Url.Action("SinglePage","Home",new { id = item.Id })">Detail</a>
+                                    </div>
+                                    <!-- End Read More -->
+                                </div>
+                            </div>
+                        </article>
+                    }
+
+                </div>
+            </div>
+            @*@{
+                var pager = Html.Pager(Model.FilterlingContext).QueryParam("pagenumber");
+            }*@
+            <!-- Pagination -->
+            <div class="pagination-wrap clearfix">
+                @*@pager*@
+            </div>
+            <!-- End Pagination -->
+        </div>
+
+
+    </div>
+</div>
